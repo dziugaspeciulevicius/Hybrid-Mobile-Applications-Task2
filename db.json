@@ -1,5 +1,4 @@
-
-[  
+{ "recipes":[  
     {
       "category_id": 1,
       "category": "Pizza",
@@ -97,4 +96,5 @@
         ]   
     }    
 ]
+}
   
