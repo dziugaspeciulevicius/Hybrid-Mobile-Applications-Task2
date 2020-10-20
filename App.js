@@ -1,21 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import HomeScreen from "./src/screens/home/Home.component";
+import CategoryScreen from "./src/screens/categories/Category.component";
+import RecipeList from "./src/screens/recipeList/RecipeList.component";
+import RecipeScreen from "./src/screens/recipe/Recipe.component";
+
+const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.jss to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      {/*Initial route (main route that gets loaded first)*/}
+      <Drawer.Navigator initialRouteName="Home" headerMode="none">
+        {/* Routes for react-native (open navigator to change routes)*/}
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Categories" component={CategoryScreen} />
+        <Drawer.Screen name="Recipe List" component={RecipeList} />
+        <Drawer.Screen name="Recipe Screen" component={RecipeScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
