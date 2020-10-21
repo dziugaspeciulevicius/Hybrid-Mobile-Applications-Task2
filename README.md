@@ -23,6 +23,8 @@ Healthy Food Recipes. Possibility to choose recipes according to certain categor
 
 ### Demo:
 <br/>
-<p align="center">
-    <img src="./demoApp.png">
+<p float="left">
+    <img src="./demoApp.png"> &nbsp;
+    <img src="./productImage1.png"> &nbsp; 
+    <img src="./productImage2.png">
 </p>

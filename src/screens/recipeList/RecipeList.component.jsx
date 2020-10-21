@@ -13,7 +13,7 @@ class RecipeList extends Component {
     const category_id = this.props.route.params.category_id;
     const category = this.props.route.params.category;
     const recipes = this.props.route.params.recipes;
-
+                                                             
     const renderGridItem = (itemData) => {
       return (
         <TouchableOpacity
