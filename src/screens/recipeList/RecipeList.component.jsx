@@ -16,16 +16,19 @@ class RecipeList extends Component {
 
     const renderGridItem = (itemData) => {
       return (
-        <TouchableOpacity style={styles.CardTouch}
-        onPress={() =>
+        <TouchableOpacity
+          style={styles.CardTouch}
+          onPress={() =>
             this.props.navigation.navigate("Recipe Screen", {
-              category_id: itemData.item.recipes.category_id,
-              recipe_id: itemData.item.recipes.recipe_id,
-              image: itemData.item.recipes.image,
-              name: itemData.item.recipes.name,
-              description: itemData.item.recipes.description,
+              recipe_id: itemData.item.recipe_id,
+              category_id: itemData.item.category_id,
+              image: itemData.item.image,
+              name: itemData.item.name,
+              description: itemData.item.description,
+              comments: itemData.item.comments
             })
-          }>
+          }
+        >
           <View style={styles.recipeCard}>
             <Image
               style={styles.imageContainer}
@@ -41,9 +44,10 @@ class RecipeList extends Component {
         <Text style={styles.categoryTitle}> Category: {category} </Text>
         <FlatList
           data={recipes}
-            // numColumns={2}
+          // numColumns={2}
+          // key={renderGridItem}
           renderItem={renderGridItem}
-          keyExtractor={(item, index) => item.key}
+          keyExtractor={(item, index) => item.name.toString()}
         />
       </View>
     );
@@ -56,6 +60,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     paddingBottom: 20,
     textAlign: "center",
+    color: "#667EEA",
   },
   CardTouch: {
     paddingBottom: 20,
@@ -68,11 +73,14 @@ const styles = StyleSheet.create({
     width: "90%",
     // textAlign: "center",
     // alignContent: 'center',
-    alignSelf: 'center',
+    alignSelf: "center",
+    backgroundColor: '#fafafc',
   },
   recipeName: {
     textAlign: "center",
     paddingBottom: 20,
+    paddingTop: 10,
+    color: "#667EEA",
   },
   imageContainer: {
     width: "55%",
@@ -84,6 +92,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     paddingTop: 30,
+    backgroundColor: '#c4cdf5',
   },
 });
 

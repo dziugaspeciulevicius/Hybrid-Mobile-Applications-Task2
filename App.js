@@ -16,12 +16,12 @@ export default function App() {
     <NavigationContainer>
       {/*Initial route (main route that gets loaded first)*/}
       <Drawer.Navigator initialRouteName="Home" headerMode="none">
-        {/* Routes for react-native (open navigator to change routes)*/}
-        <Drawer.Screen name="Home" component={HomeScreen} />
+      {/* Routes for react-native (open navigator to change routes)*/}
+      <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Categories" component={CategoryScreen} />
         <Drawer.Screen name="Recipe List" component={RecipeList} />
         <Drawer.Screen name="Recipe Screen" component={RecipeScreen} />
-      </Drawer.Navigator>
+  </Drawer.Navigator>
     </NavigationContainer>
   );
 }

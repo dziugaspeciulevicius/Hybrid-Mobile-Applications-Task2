@@ -18,7 +18,9 @@ class CategoryScreen extends Component {
   }
   componentDidMount = () => {
     axios
-      .get("https://my-json-server.typicode.com/dziugaspeciulevicius/hma-task2-api/recipes")
+      .get(
+        "https://my-json-server.typicode.com/dziugaspeciulevicius/hma-task2-api/recipes"
+      )
       .then((res) => {
         const Data = res.data;
         console.log(Data);
@@ -51,6 +53,7 @@ class CategoryScreen extends Component {
       <View style={styles.container}>
         <FlatList
           data={this.state.data}
+          // key={renderRecipeItem}
           renderItem={renderRecipeItem}
           keyExtractor={(item, index) => item.category.toString()}
         />
@@ -61,7 +64,9 @@ class CategoryScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingTop: 250,
+    backgroundColor: '#c4cdf5',
   },
   screen: {
     flex: 1,
@@ -81,7 +86,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   appButtonContainer: {
-    // backgroundColor: '#667EEA',
     borderRadius: 10,
   },
   appButtonText: {
